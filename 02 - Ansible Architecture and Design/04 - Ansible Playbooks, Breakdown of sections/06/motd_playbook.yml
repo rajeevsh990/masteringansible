@@ -6,8 +6,9 @@
 -
 
   # Target: where our play will run and options it will run with
-  hosts: centos
-  user: root
+  hosts: node 
+  user: ansible
+  become: true
   gather_facts: false
 
   # Variable: vvariables that will apply to the play, on all target systems
