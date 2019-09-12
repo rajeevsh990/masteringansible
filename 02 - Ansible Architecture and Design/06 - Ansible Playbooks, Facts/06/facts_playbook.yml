@@ -6,7 +6,7 @@
 -
 
   # Target: where our play will run and options it will run with
-  hosts: linux
+  hosts: node 
 
   # Task: the list of tasks that will be executed within the play, this section
   # can also be used for pre and post tasks
@@ -14,28 +14,28 @@
 
     - name: Make Facts Dir
       file:
-        path: /home/packt/ansible/facts.d
+        path: /home/ansible/ansible/facts.d
         recurse: yes
         state: directory
-        owner: packt
+        owner: ansible
 
     - name: Copy Fact 1
       copy:
         src: facts.d/getdate1.fact
-        dest: /home/packt/ansible/facts.d/getdate1.fact
-        owner: packt
+        dest: /home/ansible/ansible/facts.d/getdate1.fact
+        owner: ansible
         mode: 0755
 
     - name: Copy Fact 2
       copy:
         src: facts.d/getdate2.fact
-        dest: /home/packt/ansible/facts.d/getdate2.fact
-        owner: packt
+        dest: /home/ansible/ansible/facts.d/getdate2.fact
+        owner: ansible
         mode: 0755
 
     - name: Reload Facts
       setup:
-        fact_path: /home/packt/ansible/facts.d
+        fact_path: /home/ansible/ansible/facts.d
 
     - name: Show IP Address
       debug:
