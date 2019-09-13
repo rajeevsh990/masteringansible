@@ -1,14 +1,14 @@
 ---
 # YAML documents begin with the document separator ---
 
-- hosts: ubuntu-c
+- hosts: jenkins
 
   # Task: the list of tasks that will be executed within the play, this section
   # can also be used for pre and post tasks
   tasks:
-    - name: Add centos1 to adhoc_group
+    - name: Add docker to adhoc_group
       add_host:
-        name: centos1
+        name: docker
         groups: adhoc_group1, adhoc_group2
 
 - hosts: adhoc_group1
