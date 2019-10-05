@@ -202,7 +202,7 @@ Go through the below reference:
 # Ansible Playbooks
 
 In this section, we will see multiple examples of how to create playbooks which you might need to run regularly. Let’s try to install nginx server, configure them, patch them on CentOS server.  
-Go to: Ansible Playbooks, Creating and Executing
+**Go to practice session: 02/08 - Ansible Playbooks, Creating and Executing**
 
 **Revision 01:** Will be applying our code to only CentOS server using facts
 
