@@ -66,13 +66,11 @@ h) Edit the ansible.cfg file and enable the inventory file parameter on the Cont
 
 i) Every group is denoted by a square bracket and a group name within. A server can actually exist in multiple groups. Edit the inventory file /etc/ansible/hosts and add all the servers which need to be managed.
 
-> vim /etc/ansible/hosts
+> vim /etc/ansible/hosts  
+[webserver]  
+192.168.0.2
 
->[webserver]
-
->192.168.0.2
-
-j) To test the connectivity of the servers under the webserver's group run the ansible ping command as shown
+j) To test the connectivity of the servers under the webservers group run the ansible ping command as shown
 > ansible webservers –m ping
 
 To list the hosts in the inventory file, you can run the below command
@@ -110,22 +108,22 @@ To get information about the network or hardware or OS version or memory related
 
 **Command module:**
 The command module simply executes a specific command on the target machine and gives the output.
-> ansible webservers –m command - an ‘uptime’
+> ansible webservers –m command - a 'uptime'
 
-> ansible webservers –m command –a ‘hostname’
+> ansible webservers –m command –a 'hostname'
 
 **Shell Module:**
 To execute any command in the shell of your choice you can use the Shell module. The shell module commands are run in /bin/sh shell and you can make use of the operators like ‘>’ or ‘|’ (pipe symbol or even environment variables.
 > ansible webservers -m shell -a 'ls -l > temp.txt'
 
-> ansible webservers –m command -a ‘cat temp.txt’
+> ansible webservers –m command -a 'cat temp.txt'
 
 **User Module:** 
 Using this module one can create or delete users.
 
 > ansible webservers -m user -a 'name=user1 password=user1' --become
 
-> ansible webservers -m user -a 'name=user1 state=absent' –become
+> ansible webservers -m user -a 'name=user1 state=absent' –-become
 
 **File Module:**
 This module is used to create files, directories, set, or change file permissions and ownership etc. 
