@@ -1,4 +1,4 @@
-# Playbook Introduction & Commands:
+# Playbook Introduction & Modules as Commands:
 
 ![Ansible Architecture](https://github.com/rajeevsh990/masteringansible/blob/master/images/playbook-structure.png)
 
@@ -67,10 +67,10 @@ This module is used to create files, directories, set, or change file permission
 
 -	Delete a directory
 
-> ansible webservers -m file -a "dest=/home/ansible/vndir state=absent"
+> ansible webservers -m file -a "dest=/home/ansible/vndir state=absent"  
 
-**Explain: Idempotency**
- 
+**Explain: Idempotency**  
+
 **Copy Module:**
 It is used for copying files to multiple target machines.
 
