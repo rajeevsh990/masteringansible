@@ -26,3 +26,13 @@ The main components we will use in this section include:
 - templates - contains templates which can be deployed via this role.
 - meta - defines some data / information about this role (author, dependency, versions, examples, etc,.)
 
+**Examples**
+Let's navigate to Revision: 04\03 - Using Roles
+- Revision 01:
+> ansible-galaxy init nginx
+
+- Revision 02: Move the playbook code or variables into respective files or folders. 
+> ansible-playbook nginx_playbook.yml
+
+- Revision 03: Now the website related thing is moved to a separate role - awesomeweb
+> ansible-playbook nginx_playbook.yml
